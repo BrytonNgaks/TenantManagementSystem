@@ -1,0 +1,85 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="tenant"
+            type="com.example.tenantmanagementsystem.Tenant" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add New Tenant"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"/>
+
+        <EditText
+            android:id="@+id/tenantNameEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Tenant Name"
+            android:inputType="textPersonName"
+            app:layout_constraintTop_toBottomOf="@id/titleTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"/>
+
+        <EditText
+            android:id="@+id/phoneEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            app:layout_constraintTop_toBottomOf="@id/tenantNameEditText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/rentEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Monthly Rent (KSh)"
+            android:inputType="numberDecimal"
+            app:layout_constraintTop_toBottomOf="@id/phoneEditText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="SAVE"
+            app:layout_constraintTop_toBottomOf="@id/rentEditText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/tenantResultTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Saved tenant will appear here"
+            android:textSize="18sp"
+            android:text="@{tenant.summary()}"
+            app:layout_constraintTop_toBottomOf="@id/saveButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
